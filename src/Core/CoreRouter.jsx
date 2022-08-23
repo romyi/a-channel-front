@@ -12,7 +12,7 @@ const CoreRouter = () => {
     return (
     <div>
       {routeentries.map(([path, blocks]) => {
-        if (path === '*') {
+        if (path === '/*') {
            return <RuntimeBlockLoader key={'blocks-hosted-above-all-routes'} blocks={blocks}/>
         } else {
         return (
