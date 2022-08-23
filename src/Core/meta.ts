@@ -4,7 +4,7 @@ type CommonBlockAlias = "Announcement" | "Widgets" | "Docs"
 type Path = `/${string}`
 type ClientExplicitMappingBlocks = Record<CommonBlockAlias, Path>
 
-const explicitRouteMapping: ClientExplicitMappingBlocks = {
+const blockToRouteMap: ClientExplicitMappingBlocks = {
   Announcement: "/*",
   Widgets: "/",
   Docs: "/docs",
@@ -13,7 +13,7 @@ const explicitRouteMapping: ClientExplicitMappingBlocks = {
 type ClientNavigationButtonName = "Главная" | "Документы"
 type ClientExplicitMappingPaths = Record<Path, ClientNavigationButtonName>
 
-const explicitRouteNameMapping: ClientExplicitMappingPaths = {
+const routeToTitleMap: ClientExplicitMappingPaths = {
   "/": "Главная",
   "/docs": "Документы",
 };
@@ -39,7 +39,7 @@ const makeRouteBlockMap = (arr: BlockListGotFromMiddleware): BlocksGroupedUnderR
       if (!el.path) {
         return {
           ...el,
-          path: explicitRouteMapping[el.title],
+          path: blockToRouteMap[el.title],
         };
       } else {
         return el;
@@ -57,7 +57,7 @@ type LinkItems = LinkItemForSidebar[]
 const combineLinkItems = (structure: BlocksGroupedUnderRoute): LinkItems => {
   const links: LinkItems = [];
   Object.keys(structure).map((key) =>
-    links.push({ text: explicitRouteNameMapping[key], link: key })
+    links.push({ text: routeToTitleMap[key], link: key })
   );
   return links;
 };
