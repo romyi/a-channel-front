@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route } from 'wouter'
-import useBlockListQuery from '../acess-api-app/useBlockListQuery'
+import { useBlockListQuery } from '../acess-api-app'
 import useMeta from './meta'
 import RuntimeBlockLoader from './RuntimeBlockLoader'
 
