@@ -1,0 +1,36 @@
+{
+  "name": "vite-test",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "@tanstack/react-query": "^4.2.1",
+    "@tanstack/react-query-devtools": "^4.2.1",
+    "axios": "^0.27.2",
+    "dayjs": "^1.11.5",
+    "embla-carousel-react": "^7.0.1",
+    "esm": "^3.2.25",
+    "jotai": "^1.7.8",
+    "lodash": "^4.17.21",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.27.1",
+    "utility-types": "^3.10.0",
+    "wouter": "^2.8.0-alpha.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^2.0.0",
+    "typescript": "^4.6.2",
+    "vite": "^3.0.9"
+  },
+  "packageManager": "yarn@3.2.2"
+}
