@@ -49,10 +49,10 @@ const makeRouteBlockMap = (arr: BlockListGotFromMiddleware): BlocksGroupedUnderR
   );
 
 type LinkItemForSidebar = {
-  link: Path | string
+  link: Path | string //тут немного запутался, так как ниже typecheck ругался но имеется в виду только Path
   text: ClientNavigationButtonName
 }
-type LinkItems = LinkItemForSidebar[]
+export type LinkItems = LinkItemForSidebar[]
 
 const combineLinkItems = (structure: BlocksGroupedUnderRoute): LinkItems => {
   const links: LinkItems = [];

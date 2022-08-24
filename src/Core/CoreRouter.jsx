@@ -4,6 +4,13 @@ import { useBlockListQuery } from '../acess-api-app'
 import useMeta from './meta'
 import RuntimeBlockLoader from './RuntimeBlockLoader'
 
+// Работет со структурой типа BlocksGroupedUnderRoute, разбитой
+// по парам key-value см. meta.ts
+// Рисует главный роутер, аранжирующий блоки. Больше роутеров
+// на уровне всего приложения нет, саброутинг отдается блокам,
+// здесь не успел реализовать, но задумка такая была
+
+// фолбека c редиректом тут нет, но разумеется будет
 const CoreRouter = () => {
   const {data, isLoading} = useBlockListQuery()
   const { routeentries } = useMeta(data)

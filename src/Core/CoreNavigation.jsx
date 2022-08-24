@@ -3,6 +3,8 @@ import { Link } from 'wouter'
 import { useBlockListQuery } from '../acess-api-app'
 import useMeta from './meta'
 
+// Компонент работает со структурой типа LinkItems см. meta.ts
+// рисует линки для переходов по главному роуту
 const CoreNavigation = () => {
   const {data, isLoading} = useBlockListQuery()
   const { linkitems } = useMeta(data)

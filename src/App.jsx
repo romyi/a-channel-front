@@ -9,6 +9,8 @@ import CoreRouter from './Core/CoreRouter';
 import './App.css'
 
 
+// Общая сетка для navigation и контента будет рисоваться здесь.
+// Тут оболочки нет, лежит в потоке документа как есть
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
