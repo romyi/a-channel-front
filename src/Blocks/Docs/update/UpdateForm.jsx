@@ -5,7 +5,6 @@ import {nanoid} from 'nanoid'
 const UpdateForm = ({submitFunction}) => {
     const {register, handleSubmit} = useForm();
     const onSubmit = (data) => {
-        console.log({...data, id: nanoid()})
         submitFunction({...data, id: nanoid()})  
     }
     return (

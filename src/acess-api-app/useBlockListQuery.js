@@ -18,7 +18,7 @@ const blockListResponse = [
   },
   {
     title: "SnackNotification",
-    implements: ["view-payout", "view-doc"],
+    implements: ["update-doc"],
     version: 1,
     path: "/*",
   },
@@ -31,7 +31,7 @@ const useBlockListQuery = () => {
       new Promise((resolve, reject) =>
         setTimeout(() => {
           resolve(blockListResponse);
-        }, 4000)
+        }, 1000)
       )
   );
   return { data, isLoading };

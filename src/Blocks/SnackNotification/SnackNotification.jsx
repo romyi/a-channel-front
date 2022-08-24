@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDocsMutation, useDocsQuery } from '../../acess-api-app'
+import { useDocsMutation, useDocsQuery, useIsMutationSuccessful } from '../../acess-api-app'
 import { SnackbarCore } from './SnackNotification.emotion'
 
 const DocNotification = ({title}) => {
@@ -17,12 +17,13 @@ const DocNotification = ({title}) => {
 }
 
 const SnackNotification = ({interfaces}) => {
-    const enableDocNotification = interfaces?.includes('view-doc')
-    const { status } = useDocsMutation();
-    console.log(status)
-    const { isRefetching, data } = useDocsQuery(enableDocNotification)
+    const enableDocNotification = interfaces?.includes('update-doc')
+    // подписка на успешный статус mutatuin, вызванной в другом месте приложения
+    // как это из коробки работает с useQuery по queryKey
+    const docUploaded = useIsMutationSuccessful('update-doc')
+    const { data } = useDocsQuery(false)
     const newlyUploadedDoc = data?.at(-1).title
-    if (isRefetching && enableDocNotification) return <DocNotification title={newlyUploadedDoc} />
+    if (docUploaded && enableDocNotification) return <DocNotification title={newlyUploadedDoc} />
 }
 
 export default SnackNotification

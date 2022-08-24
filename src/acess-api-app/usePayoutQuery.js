@@ -12,7 +12,7 @@ const usePayoutQuery = (enable = false) => {
       new Promise((resolve, reject) =>
         setTimeout(() => {
           resolve(payouts);
-        }, 4000)
+        }, 1000)
       ),
     { enabled: enable }
   );

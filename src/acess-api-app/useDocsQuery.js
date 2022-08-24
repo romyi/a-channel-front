@@ -8,7 +8,7 @@ const useDocsQuery = (enable) => {
       new Promise((resolve, reject) =>
         setTimeout(() => {
           resolve(docs);
-        }, 4000)
+        }, 1000)
       ),
     { enabled: enable }
   );

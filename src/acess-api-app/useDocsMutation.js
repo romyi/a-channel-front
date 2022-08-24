@@ -18,7 +18,7 @@ const useDocsMutation = () => {
       new Promise((resolve) =>
         setTimeout(() => {
           resolve(docs.push(payload));
-        }, 3000)
+        }, 1000)
       ),
     {
       onSuccess: () => {
@@ -26,6 +26,7 @@ const useDocsMutation = () => {
           refetchActive: true,
         });
       },
+      mutationKey: "update-doc",
     }
   );
 };
