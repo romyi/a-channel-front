@@ -26,7 +26,7 @@ const useDocsMutation = () => {
           refetchActive: true,
         });
       },
-      mutationKey: "update-doc",
+      mutationKey: "add-new-doc",
     }
   );
 };

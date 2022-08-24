@@ -9,6 +9,10 @@ import useBlockListQuery from "./useBlockListQuery";
 import useDocsMutation from "./useDocsMutation";
 import useDocsQuery from "./useDocsQuery";
 
+// В перспективе содержимое этого каталога
+// первый кандидат на звание отдельного
+// приложения как мне кажется
+
 const queryClient = new QueryClient();
 
 const mutationCache = queryClient.getMutationCache();
@@ -40,6 +44,16 @@ export const useIsMutationSuccessful = (key) => {
   }
 };
 
+// Каждый хук в отдельном модуле это для удобства
+// работы с гитом + для масштабирования. Хук над useQuery
+// или useMutation это очень самостоятельная конструкция,
+// Несколько таких оберток могут работать с одним и тем же
+// запросом к Middleware, обозначаясь разными ключами
+// (наверняка такой кейс возникнет).
+
+// В ключах заключается один из вызовов: нужно будет держать
+// их в чистоте, возможно реализовать для них какой-нибудь
+// конструктор c типизацией.
 export {
   QueryClientProvider,
   queryClient,
