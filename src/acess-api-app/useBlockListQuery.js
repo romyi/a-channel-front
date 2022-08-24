@@ -13,8 +13,14 @@ const blockListResponse = [
   },
   {
     title: "Docs",
-    implements: [],
+    implements: ["view-doc", "update-doc"],
     version: 1,
+  },
+  {
+    title: "SnackNotification",
+    implements: ["view-payout", "view-doc"],
+    version: 1,
+    path: "/*",
   },
 ];
 

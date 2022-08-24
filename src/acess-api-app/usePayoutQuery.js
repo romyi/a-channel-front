@@ -7,7 +7,7 @@ const payouts = [
 
 const usePayoutQuery = (enable = false) => {
   const { isLoading, data } = useQuery(
-    ["view-payouts"],
+    ["view-payout"],
     () =>
       new Promise((resolve, reject) =>
         setTimeout(() => {
