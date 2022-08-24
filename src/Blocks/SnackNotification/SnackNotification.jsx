@@ -1,12 +1,28 @@
 import React from 'react'
-import { useDocsQuery } from '../../acess-api-app'
+import { useDocsMutation, useDocsQuery } from '../../acess-api-app'
 import { SnackbarCore } from './SnackNotification.emotion'
+
+const DocNotification = ({title}) => {
+    const [show, setshow] = React.useState(false)
+    React.useEffect(() => {
+        setshow(true)
+      const ntfcTm = setTimeout(() => {
+        setshow(false)
+      }, 4000);
+      return () => {
+        clearTimeout(ntfcTm)
+      }
+    }, [])
+    if (show) return <SnackbarCore>{title} добавлен</SnackbarCore>
+}
 
 const SnackNotification = ({interfaces}) => {
     const enableDocNotification = interfaces?.includes('view-doc')
-    const { isRefetching, isPreviousData } = useDocsQuery(enableDocNotification)
-    console.log(isPreviousData)
-    if (isRefetching && !isPreviousData && enableDocNotification) return <SnackbarCore>SnackNotification</SnackbarCore>
+    const { status } = useDocsMutation();
+    console.log(status)
+    const { isRefetching, data } = useDocsQuery(enableDocNotification)
+    const newlyUploadedDoc = data?.at(-1).title
+    if (isRefetching && enableDocNotification) return <DocNotification title={newlyUploadedDoc} />
 }
 
 export default SnackNotification

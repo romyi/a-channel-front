@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { docs } from "./useDocsMutation";
 
 const useDocsQuery = (enable) => {
-  const { isLoading, data, isRefetching, isPreviousData } = useQuery(
+  const { isLoading, data, isRefetching } = useQuery(
     ["view-doc"],
     () =>
       new Promise((resolve, reject) =>
@@ -10,9 +10,9 @@ const useDocsQuery = (enable) => {
           resolve(docs);
         }, 4000)
       ),
-    { enabled: enable, keepPreviousData: true }
+    { enabled: enable }
   );
-  return { data, isLoading, isRefetching, isPreviousData };
+  return { data, isLoading, isRefetching };
 };
 
 export default useDocsQuery;
