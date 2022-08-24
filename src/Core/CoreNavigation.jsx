@@ -12,7 +12,7 @@ const CoreNavigation = () => {
         {linkitems.map(item => {
           return (
             <h3  key={item.link}>
-            <Link href={item.link}>
+            <Link style={{color: '#222222', textDecoration: 'none'}} href={item.link}>
               {item.text}
             </Link>
             </h3>

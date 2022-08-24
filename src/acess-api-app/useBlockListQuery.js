@@ -20,7 +20,7 @@ const blockListResponse = [
 
 const useBlockListQuery = () => {
   const { isLoading, data } = useQuery(
-    ["get-blocks"],
+    ["view-blocks"],
     () =>
       new Promise((resolve, reject) =>
         setTimeout(() => {

@@ -7,7 +7,7 @@ const Announcement = ({interfaces}) => {
   const {data} = usePayoutQuery(enablePayoutImpl);
   if (data) return (
     <DashedCont> 
-      your last payout had amount of {data.at(-1).amount}
+      приветик, я закреплен вверху экрана вне зависимости от странички, последний payout был {data.at(-1).amount}
     </DashedCont>
   )
   

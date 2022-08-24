@@ -6,6 +6,8 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import CoreNavigation from './Core/CoreNavigation';
 import CoreRouter from './Core/CoreRouter';
 
+import './App.css'
+
 
 function App() {
   return (

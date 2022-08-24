@@ -7,7 +7,7 @@ const payouts = [
 
 const usePayoutQuery = (enable = false) => {
   const { isLoading, data } = useQuery(
-    ["get-tasks"],
+    ["view-payouts"],
     () =>
       new Promise((resolve, reject) =>
         setTimeout(() => {
