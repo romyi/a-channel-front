@@ -12,7 +12,7 @@ const DocNotification = ({title}) => {
       return () => {
         clearTimeout(ntfcTm)
       }
-    }, [])
+    }, [title])
     if (show) return <SnackbarCore>{title} добавлен</SnackbarCore>
 }
 
