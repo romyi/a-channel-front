@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDocsMutation } from '../../acess-api-app'
 import { useDocsQuery } from '../../acess-api-app'
-import UpdateForm from './update/updateForm'
+import UpdateForm from './update/UpdateForm'
 
 const Docs = ({interfaces}) => {
   const updateDocImplementation = interfaces?.includes('update-doc')

@@ -7,6 +7,7 @@ const RuntimeBlockLoader = ({blocks}) => {
   return (
     <Suspense fallback="...">{blocks.map((block) => {
         let OtherComponent = React.lazy(() => import(`../Blocks/${block.title}/index.js`));
+        console.log(OtherComponent)
         return (
           <OtherComponent key={block.title + block.path} interfaces={block.implements} />
         )
